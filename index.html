@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD con Firebase</title>
+
+    <!-- BOOTSWATCH -->
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body class="bg-dark">
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAsjUGMEGCoWEAXRx0B9hQf5ENW5qrGCwE",
+        authDomain: "practica1-37e8d.firebaseapp.com",
+        projectId: "practica1-37e8d",
+        storageBucket: "practica1-37e8d.firebasestorage.app",
+        messagingSenderId: "417888778363",
+        appId: "1:417888778363:web:ee4a1270bddfdaae370ade"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+    <!-- AÑADIR TAREA -->
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="h4">Agregar Tarea</h1>
+
+              <form id="task-form">
+                <label for="title">Título:</label>
+                <input
+                  type="text"
+                  id="task-title"
+                  class="form-control mb-3"
+                  class="My First Title"
+                  placeholder="Título de la tarea"
+                  autofocus
+                />
+
+                <label for="description">Descripción:</label>
+                <textarea
+                  id="task-description"
+                  rows="3"
+                  class="form-control mb-3"
+                  placeholder="Descripción de la tarea"
+                ></textarea>
+
+                <button class="btn btn-primary" id="btn-task-form">Guardar</button>
+                <button class="btn btn-secondary" id="btn-task-cancel" type="button">Cancelar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Lista de Tareas -->
+        <div class="col-md-6" id="tasks-container"></div>
+      </div>
+    </div>
+
+    <!-- CÓDIGO PERSONALIZADO -->
+    <script type="module" src="index.js"></script>
+
+
+  </body>
+</html>
